@@ -1,7 +1,5 @@
 import {ACTION_TYPES} from "../actions/types";
 
-
-
 function addCartAction(product){
     return (dispatch)=>{
         dispatch({

@@ -1,37 +1,37 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import ProdcutBox from "../components/product-box/product-box";
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addCartAction, deleteCartAction } from "../redux/actions/cartAction";
 
 
 const products = [
   {
-    name: "Pro 1",
+    name: "Apple iPhone 11 Pro Max Smart Phone, 32 GB, Silver",
     id: 1
   },
   {
-    name: "Pro 2",
+    name: "Apple iPhone 11 Pro Max Smart Phone, 64 GB, Silver",
     id: 2
   },
   {
-    name: "Pro 3",
+    name: "Apple iPhone 11 Pro Max Smart Phone, 128 GB, Silver",
     id: 3
-  },{
-    name: "Pro 4",
+  }, {
+    name: "Apple iPhone 11 Pro Max Smart Phone, 256 GB, Silver",
     id: 4
   }
 ]
 
-export default function Product(){
+export default function Product() {
 
   const dispatch = useDispatch();
 
-  const handleAddCart = (product)=>{
+  const handleAddCart = (product) => {
     dispatch(addCartAction(product))
   }
 
-  const handleDeleteCart = (product)=>{
+  const handleDeleteCart = (product) => {
     dispatch(deleteCartAction(product))
   }
 
@@ -45,16 +45,16 @@ export default function Product(){
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        gridGap:"20px",
-        marginTop:"20px"
+        gridGap: "20px",
+        marginTop: "20px"
       }}>
 
-        {products.map(eachProduct=>{
-            return  <ProdcutBox 
-                      key={eachProduct.id} 
-                      onAdd={()=>handleAddCart(eachProduct)} 
-                      onDelete={()=>handleDeleteCart(eachProduct)} 
-                      product={eachProduct}/>
+        {products.map(eachProduct => {
+          return <ProdcutBox
+            key={eachProduct.id}
+            onAdd={() => handleAddCart(eachProduct)}
+            onDelete={() => handleDeleteCart(eachProduct)}
+            product={eachProduct} />
         })}
       </div>
     </Layout>

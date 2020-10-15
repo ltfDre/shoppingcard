@@ -1,4 +1,4 @@
-import '../styles.css'
+// import '../styles.css'
 import '../assets/styles/navbar.css';
 import { Provider } from "react-redux";
 import store from "../store";
